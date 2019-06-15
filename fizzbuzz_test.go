@@ -47,11 +47,31 @@ func TestFizzBuzz(t *testing.T) {
 		}
 	})
 	t.Run("returns the passed argument if is not divisible by 3 or 5", func(t *testing.T) {
-		got := FizzBuzz(2)
-		want := "2"
+		tt := []struct{
+			input int
+			output string
+		}{
+			{
+				input: 2,
+				output: "2",
+			},
+			{
+				input: 4,
+				output: "4",
+			},
+		} 
 
-		if got != want {
-			t.Errorf("got '%s' want '%s'", got, want)
+
+		for _, tc  := range tt {
+			got := FizzBuzz(tc.input)
+			want := tc.output
+
+			if got != want {
+				t.Errorf("got '%s' want '%s'", got, want)
+			}
+
 		}
+
+
 	})
 }
