@@ -2,15 +2,16 @@ package main
 
 import "testing"
 
-func TestFizzBuzz(t *testing.T) {
-	t.Run("returns 1", func(t *testing.T) {
-		got := FizzBuzz(1)
-		want := "1"
+func TestDivisibleBy(t *testing.T) {
+	got := isDivisibleByWithNorest(10, 3)
+	want := false
 
-		if got != want {
-			t.Errorf("got '%s' want '%s'", got, want)
-		}
-	})
+	if got != want {
+		t.Errorf("got '%v' want '%v'", got, want)
+	}
+} 
+
+func TestFizzBuzz(t *testing.T) {
 	t.Run("returns 'Fizz' when argument is divisible by 3", func(t *testing.T) {
 		got := FizzBuzz(3)
 		want := "Fizz"
@@ -35,7 +36,7 @@ func TestFizzBuzz(t *testing.T) {
 			t.Errorf("got '%s' want '%s'", got, want)
 		}
 	})
-	t.Run("returns 2", func(t *testing.T) {
+	t.Run("returns the passed argument if is not divisible by 3 or 5", func(t *testing.T) {
 		got := FizzBuzz(2)
 		want := "2"
 

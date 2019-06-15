@@ -1,5 +1,10 @@
 package main
 
+import "strconv"
+func isDivisibleByWithNorest(a, b int) bool {
+	return false
+}
+
 func FizzBuzz(number int) string {
 	if number%3 == 0 && number%5 == 0 {
 		return "FizzBuzz"
@@ -8,6 +13,6 @@ func FizzBuzz(number int) string {
 	} else if number%5 == 0 {
 		return "Buzz"
 	} else {
-		return "1"
+		return strconv.Itoa(number)
 	}
 }
