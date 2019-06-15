@@ -11,11 +11,11 @@ func isDivisibleByWithNorest(a, b int) bool {
 }
 
 func FizzBuzz(number int) string {
-	if number%3 == 0 && number%5 == 0 {
+	if isDivisibleByWithNorest(number, 3) && isDivisibleByWithNorest(number, 5) {
 		return "FizzBuzz"
-	} else if number%3 == 0 {
+	} else if isDivisibleByWithNorest(number, 3) {
 		return "Fizz"
-	} else if number%5 == 0 {
+	} else if isDivisibleByWithNorest(number, 5) {
 		return "Buzz"
 	} else {
 		return strconv.Itoa(number)
