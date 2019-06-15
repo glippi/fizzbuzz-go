@@ -27,4 +27,12 @@ func TestFizzBuzz(t *testing.T) {
 			t.Errorf("got '%s' want '%s'", got, want)
 		}
 	})
+	t.Run("returns 'FizzBuzz' when argument is divisible by 3 and 5", func(t *testing.T) {
+		got := FizzBuzz(15)
+		want := "FizzBuzz"
+
+		if got != want {
+			t.Errorf("got '%s' want '%s'", got, want)
+		}
+	})
 }
