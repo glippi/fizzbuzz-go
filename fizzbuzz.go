@@ -1,8 +1,13 @@
 package main
 
 import "strconv"
+
 func isDivisibleByWithNorest(a, b int) bool {
+	if a%b == 0 {
+		return true
+	}
 	return false
+
 }
 
 func FizzBuzz(number int) string {
