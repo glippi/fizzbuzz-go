@@ -3,13 +3,23 @@ package main
 import "testing"
 
 func TestDivisibleBy(t *testing.T) {
-	got := isDivisibleByWithNorest(10, 3)
-	want := false
+	t.Run("return false if the 10 and 3", func(t *testing.T) {
+		got := isDivisibleByWithNorest(10, 3)
+		want := false
 
-	if got != want {
-		t.Errorf("got '%v' want '%v'", got, want)
-	}
-} 
+		if got != want {
+			t.Errorf("got '%v' want '%v'", got, want)
+		}
+	})
+	t.Run("return false if the 15 and 3", func(t *testing.T) {
+		got := isDivisibleByWithNorest(15, 3)
+		want := true
+
+		if got != want {
+			t.Errorf("got '%v' want '%v'", got, want)
+		}
+	})
+}
 
 func TestFizzBuzz(t *testing.T) {
 	t.Run("returns 'Fizz' when argument is divisible by 3", func(t *testing.T) {
